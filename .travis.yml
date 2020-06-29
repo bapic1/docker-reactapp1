@@ -8,10 +8,8 @@ before_install:
   # This is a old syntax for old libraries
   # script:
   #   - docker run USERNAME/docker-react npm run test -- --coverage
-
 script:
   - docker run -e CI=true bapic/docker-reactapp1 npm run test
-
 deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"
