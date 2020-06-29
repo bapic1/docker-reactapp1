@@ -1,0 +1,13 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t bapic/docker-reactapp1 -f Dockerfile.dev .
+  # This is a old syntax for old libraries
+  # script:
+  #   - docker run USERNAME/docker-react npm run test -- --coverage
+
+script:
+  - docker run -e CI=true bapic/docker-reactapp1 npm run test
