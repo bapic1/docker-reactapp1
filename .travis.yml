@@ -11,16 +11,28 @@ before_install:
 script:
   - docker run -e CI=true bapic/docker-reactapp1 npm run test
 
+# deploy:
+ # provider: elasticbeanstalk
+  #region: "ap-south-1"
+  #app: "docker-reactapp1"
+  #env: "DockerReactapp1-env1"
+  #bucket_name: "elasticbeanstalk-ap-south-1-821851716244"
+  #bucket_pah: "docker-reactapp1"
+
+  #on:
+   # branch: master
+  #access_key_id: $AWS_ACCESS_KEY_ID
+  #secret_access_key:
+  #  secure: "$AWS_SECRET_ACCESS_KEY"
+
 deploy:
-  provider: elasticbeanstalk
-  region: "ap-south-1"
-  app: "docker-reactapp1"
-  env: "DockerReactapp1-env1"
-  bucket_name: "elasticbeanstalk-ap-south-1-821851716244"
-  bucket_pah: "docker-reactapp1"
+  provider: azure_web_apps
+ # username: azure_deployment_user       # If AZURE_WA_USERNAME isn't set
+ # password: azure_deployment_password   # If AZURE_WA_PASSWORD isn't set
+  site: docker-reactapp1                 # If AZURE_WA_SITE isn't set
+ # slot: azure_deployment_slotname       # (optional) If AZURE_WA_SLOT isn't set
 
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key:
-    secure: "$AWS_SECRET_ACCESS_KEY"
+    username: $AZURE_WA_USERNAME
+    password: $AZURE_WA_PASSWORD
