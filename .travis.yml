@@ -27,12 +27,13 @@ script:
 
 deploy:
   provider: azure_web_apps
+  verbose: true
   username: a76741fa-8a31-49d4-abaa-2ad76bd32dce # If AZURE_WA_USERNAME isn't set
   password: DCuq9~EfC__Cw4zp6eh-iL5llMFH6MO5e9 # If AZURE_WA_PASSWORD isn't set
   site: docker-reactapp1 # If AZURE_WA_SITE isn't set
   # slot: azure_deployment_slotname       # (optional) If AZURE_WA_SLOT isn't set
 
-  on:
-    branch: master
+  # on:
+  #  branch: master
   #  username: $AZURE_WA_USERNAME
   #  password: $AZURE_WA_PASSWORD
