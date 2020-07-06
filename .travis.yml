@@ -32,7 +32,6 @@ deploy:
  # password:  # If AZURE_WA_PASSWORD isn't set
   site: docker-reactapp1 # If AZURE_WA_SITE isn't set
   # slot: azure_deployment_slotname       # (optional) If AZURE_WA_SLOT isn't set
-
   on:
    branch: master
    username: $AZURE_WA_USERNAME
