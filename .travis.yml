@@ -27,9 +27,8 @@ secret_access_key:
 # deploy:
 #   provider: azure_web_apps
 #   verbose: true
-# username:  # If AZURE_WA_USERNAME isn't set
-# password:  # If AZURE_WA_PASSWORD isn't set
-#   site: docker-reactapp1 # If AZURE_WA_SITE isn't set
+#   site: docker-reactapp1 
+# If AZURE_WA_SITE isn't set
 # slot: azure_deployment_slotname       # (optional) If AZURE_WA_SLOT isn't set
 #   on:
 #   branch: master
